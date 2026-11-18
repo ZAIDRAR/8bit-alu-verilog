@@ -1,0 +1,15 @@
+warning: Some design elements have no explicit time unit and/or
+       : time precision. This may cause confusing timing results.
+       : Affected design elements are:
+       :   -- module alu declared here: rtl/alu.v:3
+VCD info: dumpfile build/alu_waveforms.vcd opened for output.
+All 14 starter checks passed
+testbench/alu_tb.v:59: $finish called at 14000 (1ps)
+Waveforms (if generated): build/alu_waveforms.vcd
+You can open them using: gtkwave build/alu_waveforms.vcd
+warning: Some design elements have no explicit time unit and/or
+       : time precision. This may cause confusing timing results.
+       : Affected design elements are:
+       :   -- module alu declared here: rtl/alu.v:3
+PASS: 524288 exhaustive ALU vectors (8 opcodes x 256 x 256); result and all flags checked
+testbench/alu_exhaustive_tb.v:62: $finish called at 524288000 (1ps)

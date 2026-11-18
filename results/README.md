@@ -1,8 +1,11 @@
 # Verified Results
 
-There are no recorded test results yet.
+[2026-11-18 audit and results](2026-11-18/report.md): original RTL passed the
+starter and exhaustive simulations and generic synthesis checks. Logs, source
+hashes and the starter waveform are included. Physical implementation and
+GTKWave GUI inspection remain pending.
 
-Once the testbench has been run, document:
+For each new run, document:
 - Simulator and exact version
 - Test command and console output
 - Pass/fail and count of test vectors
