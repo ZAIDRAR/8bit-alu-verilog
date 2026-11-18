@@ -1,0 +1,29 @@
+{
+  "date": "2026-11-18",
+  "recorded_utc": "2026-11-18T14:00:10.455680+00:00",
+  "baseline_commit": "2486376f8a9eca407a02df353a639629bcea2e4f",
+  "rtl_unchanged_from_baseline": true,
+  "python": "3.12.14",
+  "iverilog": "12.0 (stable)",
+  "yosys": "0.52 (fee39a3284c90249e1d9684cf6944ffbbcbb8f90)",
+  "host": "Debian GNU/Linux 13 (x86_64)",
+  "synthesis": "synth -top alu -noabc; check -assert; latch absence assertion; stat",
+  "target_library": null,
+  "clock_constraint": null,
+  "source_sha256": {
+    "rtl/alu.v": "b67aa75070346652f1c9007a0703bea0be666f4696be492d2e5a9477de59e6be",
+    "testbench/alu_exhaustive_tb.v": "1b91e4cb5e350caf9cb300ad523dbc9d66039373e98232675970e4f6769a81a3",
+    "testbench/alu_tb.v": "01be2e189eae9c55e7cb9bd8dc2723b211cc84e465c6344ead60456991c87e27",
+    "scripts/run_verification.sh": "67f211f4fcc62a1c5802d584b81b79707e334a529397f123eaa5eb37083c7866",
+    "scripts/run_synthesis.sh": "b27efb76ed0337d7a1924b495ee8dde82e699a801d986517fd9703471e7615dc",
+    "scripts/run_simulation.sh": "7c48e348017058c7ac93695e41c9292625632689cd007c4adf932ab55a2b0f67"
+  },
+  "generic_cells": {
+    "$_NOT_": 21,
+    "$_OR_": 107,
+    "$_MUX_": 10,
+    "$_XOR_": 32,
+    "$_AND_": 108
+  },
+  "generic_cell_count": 278
+}

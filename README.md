@@ -1,6 +1,9 @@
 # 8-bit ALU — Verilog and Digital Design
 
-**Status:** Starter RTL and testbench published; execution and verification not yet confirmed.
+**Status:** RTL simulation and generic synthesis verified on 2026-11-18.
+The existing RTL passed 14 starter checks and 524,288 exhaustive binary-input
+vectors. See the [verification report](results/2026-11-18/report.md).
+FPGA implementation, physical timing, power and silicon measurements remain pending.
 
 This project introduces combinational RTL design, arithmetic flags, testbench construction, and eventually synthesis. It is part of [my semiconductor engineering portfolio](https://github.com/ZAIDRAR/semiconductor-learning-journey).
 
@@ -22,7 +25,7 @@ This project introduces combinational RTL design, arithmetic flags, testbench co
 | 100 | XOR | a ^ b |
 | 101 | SHL | a << 1 |
 | 110 | SHR | a >> 1 |
-| 111 | reserved | result and flags set to zero |
+| 111 | reserved | y=0, zero=1, carry=0, overflow=0 |
 
 For shift operations, `carry` is the bit shifted out. See [specification](docs/specification.md) for precise behavior.
 
@@ -42,13 +45,17 @@ Install Icarus Verilog, then from the repository root run:
 bash scripts/run_simulation.sh
 ```
 
-This script compiles and executes the starter testbench, creating an output in the ignored `build/` directory. A successful future test run must be documented with its actual simulator version, console output, and any waveforms.
+This script compiles and executes the original starter testbench in `build/`.
+Run the complete regression with `bash scripts/run_verification.sh` and generic
+synthesis with `bash scripts/run_synthesis.sh` (Yosys required). Dated evidence
+includes exact tool versions, logs, source hashes and the starter VCD.
 
 ## Roadmap
-- [ ] Run and validate the supplied testbench
-- [ ] Add randomized or exhaustive test vectors
+- [x] Run and validate the supplied testbench
+- [x] Exhaust all 8 × 256 × 256 binary input combinations and every output flag
 - [ ] Examine waveforms using GTKWave
-- [ ] Synthesize with Yosys and inspect resource usage
+- [x] Synthesize with Yosys; inspect generic cells and check for latches
 - [ ] Compare power, timing and area after an appropriate design flow
 
-No physical IC tape-out, implementation measurements, or verified test results are claimed.
+No physical IC tape-out or implementation measurements are claimed. Generic
+Yosys cells are not FPGA LUTs, physical area, or a power estimate.

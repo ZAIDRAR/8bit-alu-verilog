@@ -19,7 +19,9 @@ The ALU is combinational. Addition and subtraction wrap modulo 256 in `y`.
 - **AND/OR/XOR:** both arithmetic flags = 0.
 - **SHL:** y = a shifted left by 1; carry = original a[7].
 - **SHR:** logical right shift; carry = original a[0].
-- **Reserved op:** result and all flags = 0.
+- **Reserved op (`111`):** `y=0`, `carry=0`, `overflow=0`, **`zero=1`**.
+  The zero flag always describes the result, including this opcode. The previous
+  statement that all flags were zero contradicted the RTL and starter testbench.
 
 `b` is not used for shift operations.
 
